@@ -10,7 +10,7 @@ const Projects = () => {
       stack: ["React", "Node.js", "Database Management"],
       icon: Database,
       color: "border-primary text-primary",
-      githubUrl: "https://github.com/RahulS2905/placement_portalvvce",
+      githubUrl: "https://github.com/RahulS2905/vvce_placement_portal",
     },
     {
       number: "02",
@@ -23,6 +23,7 @@ const Projects = () => {
       ],
       icon: MapPin,
       color: "border-accent text-accent",
+      githubUrl: "https://github.com/RahulS2905/aitravel",
     },
     {
       number: "03",
