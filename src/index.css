@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@fontsource/bangers';
+@import '@fontsource/comic-neue';
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Comic Book Theme */
+    --background: 45 40% 96%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 4 90% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 100% 51%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 45 30% 90%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 10%;
+    --input: 0 0% 100%;
+    --ring: 4 90% 58%;
+
+    --radius: 0.5rem;
+
+    /* Comic book specific colors */
+    --comic-red: 4 90% 58%;
+    --comic-blue: 217 91% 60%;
+    --comic-yellow: 45 100% 51%;
+    --comic-black: 0 0% 10%;
+    --comic-white: 0 0% 100%;
+    
+    /* Comic effects */
+    --halftone-pattern: radial-gradient(circle, hsl(0 0% 10%) 1px, transparent 1px);
+    --panel-shadow: 4px 4px 0px hsl(0 0% 10%);
+  }
+}
+
+@layer utilities {
+  .text-comic-shadow {
+    text-shadow: 3px 3px 0px hsl(0 0% 10%);
+  }
+  
+  .text-comic-outline {
+    text-shadow: 
+      -2px -2px 0 hsl(0 0% 10%),  
+      2px -2px 0 hsl(0 0% 10%),
+      -2px 2px 0 hsl(0 0% 10%),
+      2px 2px 0 hsl(0 0% 10%);
+  }
+  
+  .panel-shadow {
+    box-shadow: 5px 5px 0px hsl(0 0% 10%);
+  }
+  
+  .panel-border {
+    border: 4px solid hsl(0 0% 10%);
+  }
+  
+  .halftone-bg {
+    background-image: radial-gradient(circle, hsl(0 0% 10% / 0.15) 1px, transparent 1px);
+    background-size: 8px 8px;
+  }
+  
+  .comic-dots {
+    background-image: radial-gradient(circle, hsl(0 0% 10% / 0.1) 2px, transparent 2px);
+    background-size: 15px 15px;
+  }
+  
+  .paper-texture {
+    background-color: hsl(45 40% 96%);
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(0 0% 0% / 0.02) 2px, hsl(0 0% 0% / 0.02) 4px);
+  }
+  
+  .speech-bubble {
+    position: relative;
+    background: hsl(0 0% 100%);
+    border: 3px solid hsl(0 0% 10%);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  
+  .speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid hsl(0 0% 10%);
+  }
+  
+  .speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 23px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 17px solid hsl(0 0% 100%);
+    z-index: 1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
